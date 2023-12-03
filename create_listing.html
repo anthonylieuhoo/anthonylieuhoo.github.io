@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>UniTrade</title>
+        <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+    </head>
+    <style>
+        body{
+            margin: 0px;
+        }
+
+        .navbar{
+            background-color: hsl(255, 60%, 65%);
+        }
+
+        .navbar ul{
+            list-style-type: none;
+            padding: 0px;
+            margin: 0px;
+            display: flex;
+            align-items: center;
+        }
+
+        .navbar a{
+            color: white;
+            font-family: Arial, Helvetica, sans-serif;
+            text-decoration: none;
+            padding: 15px;
+            text-align: center;
+        }
+
+        .navbar a:hover{
+            background-color: hsl(255, 60%, 55%);
+        }
+
+        .navbar li{
+            flex: 1;
+            float: center;
+        }
+
+        #search{
+            width: 750px;
+            height: 30px;
+            border-radius: 10px;
+        }
+
+        #searchButton{
+            height: 30px;
+            background-color: white;
+            border-radius: 10px;
+        }
+
+        img{
+            border-radius: 10px;
+            border: 3px solid #000;
+            display: block;
+            margin-top: 5%;
+            margin-left: 25%;
+        }
+
+        .text{
+            display: flex;
+            float: right;
+            flex-direction: column;
+            align-items: center;
+            height: 100vh;
+            margin-left: 100%;
+            line-height: 4;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            column-gap: 5px;
+        }
+
+    </style>
+    <body>
+        <nav class="navbar">
+            <ul>
+                <li><img src="/images/Icon.png" width="45" height="45" alt="Image Description"></li>
+                <li><a href="home.html">UniTrade</a></li>
+                <li><input type="search" id="search" name="search" placeholder="Search UniTrade"></li>
+                <li><button id="searchButton" onclick="window.location.href='home.html'">Search</button></li>
+                <li><a href="friends.html">Friends</a></li>
+                <li><a href="messages.html">Messages</a></li>
+                <li><a href="notifications.html">Notifications</a></li>
+                <li><a href="settings.html">Settings</a></li>
+            </ul>
+        </nav>
+        <div class="container">
+            <img src="images/plus.png" href="" style="max-width: 100%;"></img>
+            <div class="text">
+                <label for="name">Name: </label>
+                <input type="text" id="name" name="name" style="width: 500px; height: 30px; border-radius: 10px;" required>
+                <label for="price">Price:</label>
+                <input type="text" id="price" name="price" style="width: 500px; height: 30px; border-radius: 10px;" required>
+                <label for="details">Details:</label>
+                <input type="text" id="details" name="details" style="width: 500px; height: 30px; border-radius: 10px;" required>
+                <label for="bday">Location:</label>
+                <input type="text" id="bday" name="bday" style="width: 500px; height: 30px; border-radius: 10px;" required>
+                <input type="submit" value="Create" onclick="window.location.href='home.html'" style="margin-top: 50px; width: 510px; height: 50px; background: hsl(255, 75%, 75%); color: white; border-radius: 10px; font-size: medium;;">
+            </div>
+        </div>>
+    </body>
+</html>

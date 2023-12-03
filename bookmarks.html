@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>UniTrade</title>
+        <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+    </head>
+    <style>
+        body{
+            margin: 0px;
+        }
+
+        .navbar{
+            background-color: hsl(255, 60%, 65%);
+        }
+
+        .navbar ul{
+            list-style-type: none;
+            padding: 0px;
+            margin: 0px;
+            display: flex;
+            align-items: center;
+        }
+
+        .navbar a{
+            color: white;
+            font-family: Arial, Helvetica, sans-serif;
+            text-decoration: none;
+            padding: 15px;
+            text-align: center;
+        }
+
+        .navbar a:hover{
+            background-color: hsl(255, 60%, 55%);
+        }
+
+        .navbar li{
+            flex: 1;
+            float: center;
+        }
+
+        #search{
+            width: 750px;
+            height: 30px;
+            border-radius: 10px;
+        }
+
+        #searchButton{
+            height: 30px;
+            background-color: white;
+            border-radius: 10px;
+        }
+
+        #title{
+            display: flex;
+            flex-direction: column;
+            justify-content: top;
+            margin: 1%;
+            line-height: 2;
+            font-size: 150%;
+            font-family: Arial, Helvetica, sans-serif; 
+        }
+
+        #myButton {
+            display: flex;
+            justify-content: space-around;
+            border: none;
+            background: transparent;
+            cursor: pointer;
+        }
+
+        .column {
+            float: left;
+            width: 30%;
+            padding: 5px;
+        }
+
+        .row::after {
+            content: "";
+            clear: both;
+            display: table;
+        }
+
+        img{
+            border-radius: 10px;
+            border: 3px solid #000;
+        
+        }
+
+        .bookmark.window {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        .header {
+            background-color: hsl(255, 60%, 65%);
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .bookmark {
+            margin-bottom: 10px;
+            max-width: 70%;
+            padding: 12px;
+            border-radius: 10px;
+            word-wrap: break-word;
+            text-align: center;
+        }
+
+        .bookmark.head {
+            background-color: hsl(255, 60%, 65%);
+            color: #fff;
+            text-align: center;
+            padding: 12px;
+            border-radius: 50px;
+            max-width: 70%;
+            margin-left: auto;
+        }
+
+
+    </style>
+    <body>
+        <nav class="navbar">
+            <ul>
+                <li><img src="/images/Icon.png" width="45" height="45" alt="Image Description"></li>
+                <li><a href="home.html">UniTrade</a></li>
+                <li><input type="search" id="search" name="search" placeholder="Search UniTrade"></li>
+                <li><button id="searchButton" onclick="window.location.href='home.html'">Search</button></li>
+                <li><a href="friends.html">Friends</a></li>
+                <li><a href="messages.html">Messages</a></li>
+                <li><a href="notifications.html">Notifications</a></li>
+                <li><a href="settings.html">Settings</a></li>
+            </ul>
+        </nav>
+
+    <div class="bookmark-window">
+        <div class="header">Bookmarks</div>
+        <div class="bookmark" id="bookmark">
+            <div class="bookmark head">Your bookmarked items:</div>
+         </div>
+
+         <div class="row">
+            <div class="column">
+                <button id="myButton" onclick="window.location.href='mylisting.html'">
+                    <img src="images/supplies.jpeg" href="" style="max-width: 50%; margin-left: 1%;"></img>
+                </button>
+            </div>
+            <div class="column">
+                <button id="myButton" onclick="window.location.href='mylisting.html'">
+                    <img src="images/books.jpeg" href="" style="max-width: 50%; margin-left: 1%;"></img>
+                </button>
+            </div>
+            <div class="column">
+                <button id="myButton" onclick="window.location.href='mylisting.html'">
+                    <img src="images/books.jpeg" href="" style="max-width: 50%;"></img>
+                </button>
+            </div>
+
+</body>
+</html>

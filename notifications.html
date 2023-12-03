@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>UniTrade</title>
+        <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+    </head>
+    <style>
+        body{
+            margin: 0px;
+        }
+
+        .navbar{
+            background-color: hsl(255, 60%, 65%);
+        }
+
+        .navbar ul{
+            list-style-type: none;
+            padding: 0px;
+            margin: 0px;
+            display: flex;
+            align-items: center;
+        }
+
+        .navbar a{
+            color: white;
+            font-family: Arial, Helvetica, sans-serif;
+            text-decoration: none;
+            padding: 15px;
+            text-align: center;
+        }
+
+        .navbar a:hover{
+            background-color: hsl(255, 60%, 55%);
+        }
+
+        .navbar li{
+            flex: 1;
+            float: center;
+        }
+
+        #search{
+            width: 750px;
+            height: 30px;
+            border-radius: 10px;
+        }
+
+        #searchButton{
+            height: 30px;
+            background-color: white;
+            border-radius: 10px;
+        }
+
+        .buttons{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: top;
+            height: 100vh;
+            margin: 0;
+            line-height: 3;
+            margin: 50px;
+        }
+
+        .buttons #editprofile{
+            width: 400px;
+            height: 100px;
+            margin: 25px;
+        }
+
+        .buttons #editaccount{
+            width: 400px;
+            height: 100px;
+            margin: 25px;
+        }
+
+        .buttons #privacy{
+            width: 400px;
+            height: 100px;
+            margin: 25px;
+        }
+
+        .buttons #signout{
+            width: 400px;
+            height: 100px;
+            margin: 25px;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            column-gap: 5px;
+        }
+        .text{
+            color: white;
+            display: flex;
+            float: right;
+            flex-direction: column;
+            height: 100vh;
+            margin-left: 50%;
+            line-height: 4;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: larger;
+        }
+        .box {
+            background-color: hsl(255, 75%, 75%);
+            width: 750px;
+            height: 100px;
+            border-radius: 10px;
+            border: 3px solid black;
+            padding: 10px;
+            margin: 10px;
+        }
+
+    </style>
+    <body>
+        <nav class="navbar">
+            <ul>
+                <li><img src="/images/Icon.png" width="45" height="45" alt="Image Description"></li>
+                <li><a href="home.html">UniTrade</a></li>
+                <li><input type="search" id="search" name="search" placeholder="Search UniTrade"></li>
+                <li><button id="searchButton" onclick="window.location.href='home.html'">Search</button></li>
+                <li><a href="friends.html">Friends</a></li>
+                <li><a href="messages.html">Messages</a></li>
+                <li><a href="notifications.html">Notifications</a></li>
+                <li><a href="settings.html">Settings</a></li>
+            </ul>
+        </nav>
+        <div class="container">
+            <div class="text">
+                <div class = "box">
+                    <center>
+                        <label for="Notification1">New Item</label>
+                        <img src="images/bell.png" height="40" width="40" alt="Image"></img>
+                    </center>
+                </div>
+                <div class = "box">
+                    <center>
+                        <label for="Notification2">Sold Out</label>
+                        <img src="images/bell.png" height="40" width="40" alt="Image"></img>
+                    </center>
+                </div>
+                <div class = "box">
+                    <center>
+                        <label for="Notification3">Limited Supply</label>
+                        <img src="images/bell.png" height="40" width="40" alt="Image"></img>
+                    </center>
+                </div>
+                <div class = "box">
+                    <center>
+                        <label for="Notification4">50% off</label>
+                        <img src="images/bell.png" height="40" width="40" alt="Image"></img>
+                    </center>
+                </div>
+                <div class = "box">
+                    <center>
+                        <label for="Notification5">In Stock Now</label>
+                        <img src="images/bell.png" height="40" width="40" alt="Image"></img>
+                    </center>
+                </div>
+                <div class = "box">
+                    <center>
+                        <label for="Notification6">Trade Request</label>
+                        <img src="images/bell.png" height="40" width="40" alt="Image"></img>
+                    </center>
+                </div>
+                <div class = "box">
+                    <center>
+                        <label for="Notification7">Sold</label>
+                        <img src="images/bell.png" height="40" width="40" alt="Image"></img>
+                    </center>
+                </div>
+                <div class = "box">
+                    <center>
+                        <label for="Notification8">Trade Denied</label>
+                        <img src="images/bell.png" height="40" width="40" alt="Image"></img>
+                    </center>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
