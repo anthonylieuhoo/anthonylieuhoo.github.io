@@ -31,7 +31,8 @@ document.addEventListener("DOMContentLoaded", function () {
         });
 
         happyGif.style.opacity = "1";
-        text.textContent = "Now then... shall we?? 🎉";
+        text.textContent = "Yay!! No takebacks!! Now then... shall we?? 🎉";
+        noButton.style.display = "none";
         count = 0;
 
         // Start confetti effect
