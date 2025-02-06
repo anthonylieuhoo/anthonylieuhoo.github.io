@@ -1,26 +1,102 @@
-.gif {
-    
-}
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Comic+Neue:wght@700&family=Pacifico&display=swap');
 
-.buttons {
+body {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-top: 50vh;
+    height: 100vh;
+    margin: 0;
+    background: linear-gradient(to bottom, #ffec5c, #ff9aa2); /* Minion yellow fading into soft pink */
+    position: relative;
+    font-family: 'Comic Neue', cursive;
 }
 
-.yes-button {
-    background-color: green;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    padding-left: 20px;
-    padding-right: 20px;
+/* Floating hearts animation */
+body::before {
+    content: "❤️ 💕 💖 💛 💙";
+    position: absolute;
+    top: 5%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 30px;
+    animation: floatHearts 5s infinite linear;
+    pointer-events: none;
 }
 
-.no-button {
-    background-color: red;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    padding-left: 20px;
-    padding-right: 20px;
+/* Centered image section */
+.image {
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: bounce 2s infinite ease-in-out;
+}
+
+/* Cute text */
+p {
+    position: relative;
+    top: 100px;
+    font-size: 26px;
+    font-weight: bold;
+    text-align: center;
+    color: #c9184a; /* Valentine’s red */
+    font-family: 'Pacifico', cursive;
+}
+
+/* Button styles */
+.buttons {
+    position: relative;
+    top: 120px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.buttons button {
+    padding: 14px 28px;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    background-color: #c9184a; /* Romantic red */
+    color: white;
+    font-family: 'Fredoka One', cursive;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease-in-out;
+}
+
+.buttons button:hover {
+    background-color: #ff477e; /* Soft pink */
+    color: white;
+    transform: scale(1.1);
+}
+
+/* Hide all images initially */
+#happy-gif, #sad-gif, #alert-gif, #moon-img {
+    opacity: 0;
+}
+
+/* Cute bouncing animation */
+@keyframes bounce {
+    0%, 100% {
+        transform: translate(-50%, -50%) translateY(0);
+    }
+    50% {
+        transform: translate(-50%, -50%) translateY(-10px);
+    }
+}
+
+/* Floating hearts animation */
+@keyframes floatHearts {
+    0% {
+        transform: translateX(-50%) translateY(0);
+    }
+    50% {
+        transform: translateX(-50%) translateY(-15px);
+    }
+    100% {
+        transform: translateX(-50%) translateY(0);
+    }
 }
