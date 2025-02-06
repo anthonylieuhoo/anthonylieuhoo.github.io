@@ -7,6 +7,8 @@ document.addEventListener("DOMContentLoaded", function () {
     const alertGif = document.getElementById("alert-gif");
     const moonImg = document.getElementById("moon-img");
     const text = document.getElementById("text");
+    const audio = document.getElementById("audio"); // New: Get the audio element
+
     let count = 0;
 
     // Load confetti script dynamically
@@ -41,6 +43,9 @@ document.addEventListener("DOMContentLoaded", function () {
         } else {
             loadConfetti(startConfetti);
         }
+
+        // New: Play the audio file
+        audio.play();
     });
 
     noButton.addEventListener("click", function () {
