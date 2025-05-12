@@ -1,76 +1,34 @@
-document.addEventListener("DOMContentLoaded", function () {
-    const yesButton = document.querySelector(".yes-button");
-    const noButton = document.querySelector(".no-button");
-    const images = document.querySelectorAll(".image");
-    const happyGif = document.getElementById("happy-gif");
-    const sadGif = document.getElementById("sad-gif");
-    const alertGif = document.getElementById("alert-gif");
-    const moonImg = document.getElementById("moon-img");
-    const text = document.getElementById("text");
-    const audio = document.getElementById("audio"); // New: Get the audio element
+// script.js
+function updateCountdown() {
+    const targetDate = new Date('May 13, 2025 00:00:00').getTime();
+    const now = new Date().getTime();
+    const distance = targetDate - now;
 
-    let count = 0;
+    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-    // Load confetti script dynamically
-    function loadConfetti(callback) {
-        const script = document.createElement("script");
-        script.src = "https://cdn.jsdelivr.net/npm/canvas-confetti@1.3.1/dist/confetti.browser.min.js";
-        script.onload = callback;
-        document.body.appendChild(script);
+    document.getElementById('days').innerHTML = days.toString().padStart(2, '0');
+    document.getElementById('hours').innerHTML = hours.toString().padStart(2, '0');
+    document.getElementById('minutes').innerHTML = minutes.toString().padStart(2, '0');
+    document.getElementById('seconds').innerHTML = seconds.toString().padStart(2, '0');
+
+    if (distance < 0) {
+        clearInterval(countdownInterval);
+        document.getElementById('countdown').innerHTML = "THE KING HAS RETURNED!";
     }
+}
 
-    function startConfetti() {
-        confetti({
-            particleCount: 200,
-            spread: 70,
-            origin: { y: 0.6 } // Adjust to start from higher
-        });
+// Initial call
+updateCountdown();
+// Update every second
+const countdownInterval = setInterval(updateCountdown, 1000);
+
+// Enable audio after user interaction
+document.addEventListener('click', function() {
+    const audio = document.querySelector('audio');
+    if (audio.paused) {
+        audio.play().catch(error => console.log('Audio play failed:', error));
     }
-
-    yesButton.addEventListener("click", function () {
-        images.forEach(image => {
-            image.style.opacity = "0";
-        });
-
-        happyGif.style.opacity = "1";
-        text.textContent = "Yay!! No takebacks!! Now then... shall we?? 🎉";
-        noButton.style.display = "none";
-        count = 0;
-
-        // Start confetti effect
-        if (typeof confetti !== "undefined") {
-            startConfetti();
-        } else {
-            loadConfetti(startConfetti);
-        }
-
-        // New: Play the audio file
-        audio.play();
-    });
-
-    noButton.addEventListener("click", function () {
-        images.forEach(image => {
-            image.style.opacity = "0";
-        });
-
-        switch (count) {
-            case 0:
-                sadGif.style.opacity = "1";
-                text.textContent = "Aww, why not??";
-                break;
-            case 1:
-                alertGif.style.opacity = "1";
-                text.textContent = "This isn't going like we planned!! What are we going to do!?";
-                break;
-            case 2:
-                moonImg.style.opacity = "1";
-                noButton.style.display = "none";
-                text.textContent = "Minions!! We are going to steal the button!!";
-                break;
-        }
-
-        if (count < 2) {
-            count += 1;
-        }
-    });
-});
+}, { once: true });

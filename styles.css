@@ -1,102 +1,90 @@
-@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Comic+Neue:wght@700&family=Pacifico&display=swap');
-
+/* styles.css */
 body {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
     margin: 0;
-    background: linear-gradient(to bottom, #ffec5c, #ff9aa2); /* Minion yellow fading into soft pink */
-    position: relative;
-    font-family: 'Comic Neue', cursive;
+    padding: 0;
+    background-color: #000;
+    font-family: 'Arial', sans-serif;
+    color: #fff;
+    overflow-x: hidden;
 }
 
-/* Floating hearts animation */
-body::before {
-    content: "❤️ 💕 💖 💛 💙";
-    position: absolute;
-    top: 5%;
-    left: 50%;
-    transform: translateX(-50%);
-    font-size: 30px;
-    animation: floatHearts 5s infinite linear;
-    pointer-events: none;
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
 }
 
-/* Centered image section */
-.image {
-    position: absolute;
-    top: 35%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    animation: bounce 2s infinite ease-in-out;
-}
-
-/* Cute text */
-p {
-    position: relative;
-    top: 100px;
-    font-size: 26px;
-    font-weight: bold;
+/* Updated title section in styles.css */
+.title {
     text-align: center;
-    color: #c9184a; /* Valentine’s red */
-    font-family: 'Pacifico', cursive;
+    font-size: 3.5em;
+    margin: 30px 0;
+    background: linear-gradient(45deg, #4b0082, #0000ff, #00ffff);
+    /* Updated background-clip properties */
+    background-clip: text;
+    -webkit-background-clip: text;
+    /* Updated text color properties */
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 10px rgba(75, 0, 130, 0.5);
 }
 
-/* Button styles */
-.buttons {
-    position: relative;
-    top: 120px;
+.countdown-container {
     display: flex;
     justify-content: center;
-    gap: 20px;
+    gap: 30px;
+    margin: 50px 0;
 }
 
-.buttons button {
-    padding: 14px 28px;
-    font-size: 18px;
+.time-block {
+    text-align: center;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 20px;
+    border-radius: 10px;
+    border: 2px solid #4b0082;
+    min-width: 150px;
+}
+
+.time-block span {
+    font-size: 3em;
     font-weight: bold;
-    border: none;
-    border-radius: 30px;
-    cursor: pointer;
-    background-color: #c9184a; /* Romantic red */
-    color: white;
-    font-family: 'Fredoka One', cursive;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-    transition: all 0.3s ease-in-out;
+    color: #00ffff;
+    text-shadow: 0 0 10px #00ffff;
 }
 
-.buttons button:hover {
-    background-color: #ff477e; /* Soft pink */
-    color: white;
-    transform: scale(1.1);
+.label {
+    font-size: 1.2em;
+    color: #4b0082;
+    margin-top: 10px;
 }
 
-/* Hide all images initially */
-#happy-gif, #sad-gif, #alert-gif, #moon-img {
-    opacity: 0;
+/* Updated image-grid section in styles.css */
+.image-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-top: 50px;
+    align-items: start; /* Add this to prevent row stretching */
 }
 
-/* Cute bouncing animation */
-@keyframes bounce {
-    0%, 100% {
-        transform: translate(-50%, -50%) translateY(0);
-    }
-    50% {
-        transform: translate(-50%, -50%) translateY(-10px);
+.grid-image {
+    width: 100%;
+    height: 300px; /* Keep fixed height for consistency */
+    object-fit: contain; /* Changed from 'cover' to 'contain' */
+    border-radius: 10px;
+    border: 2px solid #4b0082;
+    transition: transform 0.3s ease;
+    background: rgba(0, 0, 0, 0.5); /* Add background for transparent areas */
+    padding: 5px; /* Add some spacing around images */
+}
+
+/* Optional: Add different sizing for mobile */
+@media (max-width: 768px) {
+    .grid-image {
+        height: 200px;
     }
 }
 
-/* Floating hearts animation */
-@keyframes floatHearts {
-    0% {
-        transform: translateX(-50%) translateY(0);
-    }
-    50% {
-        transform: translateX(-50%) translateY(-15px);
-    }
-    100% {
-        transform: translateX(-50%) translateY(0);
-    }
+.grid-image:hover {
+    transform: scale(1.05);
 }
