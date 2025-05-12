@@ -78,40 +78,46 @@ body {
     padding: 5px; /* Add some spacing around images */
 }
 
-/* Updated media query in styles.css */
+/* styles.css */
+/* ... (keep previous desktop styles) ... */
+
 @media (max-width: 768px) {
     .countdown-container {
-        grid-template-columns: repeat(2, 1fr);
-        display: grid;
-        gap: 15px;
-        margin: 30px 0;
+        display: grid !important; /* Force grid layout */
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 10px;
+        margin: 20px 0;
+        width: 100%;
+        padding: 0 10px;
     }
 
     .time-block {
-        min-width: auto;
-        padding: 15px;
-        margin: 0;
+        width: 100% !important;
+        min-width: unset !important;
+        margin: 0 !important;
+        padding: 15px !important;
     }
 
     .time-block span {
-        font-size: 2em;
+        font-size: 1.8em !important;
     }
 
     .label {
-        font-size: 1em;
+        font-size: 0.9em !important;
     }
 
     .title {
-        font-size: 2.5em;
-        margin: 20px 0;
+        font-size: 2em;
+        padding: 0 10px;
     }
 
     .image-grid {
         grid-template-columns: 1fr;
+        padding: 0 10px;
     }
 
     .grid-image {
-        height: 250px;
+        height: 200px;
     }
 }
 
